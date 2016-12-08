@@ -1,5 +1,8 @@
 {
     "name": "ekino/ekino-symfony",
     "type": "wordpress-plugin",
-    "description": "This is the Ekino Wordpress plugin to interact with Symfony (using EkinoWordpressBundle)."
+    "description": "This is the Ekino Wordpress plugin to interact with Symfony (using EkinoWordpressBundle).",
+    "require": {
+        "composer/installers": "~1.0"
+    }
 }
