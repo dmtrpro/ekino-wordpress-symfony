@@ -55,3 +55,18 @@ function ekino_wordpress_symfony_hook_wp_logout() {
 
     symfony_event_dispatch('ekino.wordpress.user_logout', $event);
 }
+
+/**
+ * Dispatch Wordpress post on Symfony event dispatcher
+ *
+ * @param int      $post_ID Wordpress post id
+ * @param \WP_Post $post    Wordpress post object
+ */
+function ekino_wordpress_symfony_hook_edit_post($post_ID, $post) {
+    $event = new \Ekino\WordpressBundle\Event\WordpressEvent(array(
+        'post_ID' => $post_ID,
+        'post'    => $post
+    ));
+
+    symfony_event_dispatch('ekino.wordpress.edit_post', $event);
+}
