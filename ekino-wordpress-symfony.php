@@ -27,3 +27,8 @@ add_action('auth_cookie_valid', 'ekino_wordpress_symfony_hook_wp_login_cookie', 
  * User logout hook
  */
 add_action('wp_logout', 'ekino_wordpress_symfony_hook_wp_logout');
+
+/**
+ * Edit post hook
+ */
+add_action('edit_post', 'ekino_wordpress_symfony_hook_edit_post', 20, 2);
