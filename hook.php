@@ -59,14 +59,27 @@ function ekino_wordpress_symfony_hook_wp_logout() {
 /**
  * Dispatch Wordpress post on Symfony event dispatcher
  *
- * @param int      $post_ID Wordpress post id
+ * @param int      $post_id Wordpress post id
  * @param \WP_Post $post    Wordpress post object
  */
-function ekino_wordpress_symfony_hook_edit_post($post_ID, $post) {
+function ekino_wordpress_symfony_hook_edit_post($post_id, $post) {
     $event = new \Ekino\WordpressBundle\Event\WordpressEvent(array(
-        'post_ID' => $post_ID,
-        'post'    => $post
+        'post_id' => $post_id,
+        'post'    => $post,
     ));
 
     symfony_event_dispatch('ekino.wordpress.edit_post', $event);
+}
+
+/**
+ * Dispatch Wordpress post on Symfony event dispatcher
+ *
+ * @param int      $post_id Wordpress post id
+ */
+function ekino_wordpress_symfony_hook_delete_post($post_id) {
+    $event = new \Ekino\WordpressBundle\Event\WordpressEvent(array(
+        'post_id' => $post_id,
+    ));
+
+    symfony_event_dispatch('ekino.wordpress.delete_post', $event);
 }
