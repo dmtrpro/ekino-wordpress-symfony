@@ -70,3 +70,16 @@ function ekino_wordpress_symfony_hook_edit_post($post_id, $post) {
 
     symfony_event_dispatch('ekino.wordpress.edit_post', $event);
 }
+
+/**
+ * Dispatch Wordpress post on Symfony event dispatcher
+ *
+ * @param int      $post_id Wordpress post id
+ */
+function ekino_wordpress_symfony_hook_delete_post($post_id) {
+    $event = new \Ekino\WordpressBundle\Event\WordpressEvent(array(
+        'post_id' => $post_id,
+    ));
+
+    symfony_event_dispatch('ekino.wordpress.delete_post', $event);
+}

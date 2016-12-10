@@ -32,3 +32,8 @@ add_action('wp_logout', 'ekino_wordpress_symfony_hook_wp_logout');
  * Edit post hook
  */
 add_action('edit_post', 'ekino_wordpress_symfony_hook_edit_post', 20, 2);
+
+/**
+ * Delete post hook
+ */
+add_action('delete_post', 'ekino_wordpress_symfony_hook_delete_post');
