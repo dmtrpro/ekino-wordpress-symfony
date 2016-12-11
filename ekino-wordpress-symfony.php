@@ -34,6 +34,11 @@ add_action('wp_logout', 'ekino_wordpress_symfony_hook_wp_logout');
 add_action('edit_post', 'ekino_wordpress_symfony_hook_edit_post', 20, 2);
 
 /**
+ * Trash post hook
+ */
+add_action('trashed_post', 'ekino_wordpress_symfony_hook_trash_post');
+
+/**
  * Delete post hook
  */
 add_action('delete_post', 'ekino_wordpress_symfony_hook_delete_post');
