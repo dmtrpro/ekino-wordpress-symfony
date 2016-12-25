@@ -5,7 +5,7 @@ Plugin URI: https://github.com/ekino/ekino-wordpress-symfony
 Description: Use Symfony services inside Wordpress
 Author: Ekino
 Author URI: http://www.ekino.com
-Version: 0.1
+Version: 0.2
 */
 
 require_once 'core.php';
